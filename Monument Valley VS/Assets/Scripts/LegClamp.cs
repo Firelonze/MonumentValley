@@ -5,7 +5,7 @@ using UnityEngine;
 public class LegClamp : MonoBehaviour
 {
 
-	public GameObject clamp;
+//	public GameObject clamp;
 	[SerializeField] public Transform target;
 	private Collider[] collidersInRange;
 
@@ -17,17 +17,15 @@ public class LegClamp : MonoBehaviour
 	col = gameObject.GetComponent<BoxCollider>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-		
-	}
+    
 
 	private void OnMouseUp()
 	{
 		for (int i = 0; i < collidersInRange.Length; i++)
 		{
 			col.transform.rotation = target.transform.rotation;
+			Debug.Log("I AM CLAMPING");
 		}
+		Debug.Log("I AM LETTING GO");
 	}
 }
