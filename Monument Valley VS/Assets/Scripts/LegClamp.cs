@@ -26,6 +26,6 @@ public class LegClamp : MonoBehaviour
 			col.transform.rotation = target.transform.rotation;
 			Debug.Log("I AM CLAMPING");
 		}
-		Debug.Log("I AM LETTING GO");
+		Debug.Log("I AM LETTING GO");	
 	}
 }
