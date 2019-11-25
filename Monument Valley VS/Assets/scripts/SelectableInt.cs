@@ -36,6 +36,15 @@ public class SelectableInt : MonoBehaviour
             case "9":
                 waypointInt = 9;
                 break;
+            case "10":
+                waypointInt = 10;
+                break;
+            case "11":
+                waypointInt = 11;
+                break;
+            case "12":
+                waypointInt = 12;
+                break;
         }
     }
 }

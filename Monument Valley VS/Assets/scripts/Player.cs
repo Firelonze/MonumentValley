@@ -19,6 +19,8 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        
+
         if (GameObject.Find("Selection Manager").GetComponent<selectionManager>().destination != 0 && moving == false)
         {
             moving = true;
@@ -69,6 +71,14 @@ public class Player : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, currentWaypointTransform, step);
             transform.LookAt(currentWaypointTransform);
+            if (currentWaypoint != 8 && currentWaypoint != 9)
+            {
+                transform.eulerAngles = new Vector3(0, this.transform.eulerAngles.y, this.transform.eulerAngles.z);
+            }
+            if (currentWaypoint == 8 || currentWaypoint == 9)
+            {
+                transform.eulerAngles = new Vector3(0, 90, this.transform.eulerAngles.z);
+            }
         }
     }
 
@@ -84,6 +94,6 @@ public class Player : MonoBehaviour
         }
         currentWaypoint = walkIndex;
         currentWaypointObject = GameObject.Find("" + currentWaypoint);
-        currentWaypointTransform = new Vector3(currentWaypointObject.transform.position.x, 1.048f, currentWaypointObject.transform.position.z);
+        currentWaypointTransform = new Vector3(currentWaypointObject.transform.position.x, currentWaypointObject.transform.position.y + 0.548f, currentWaypointObject.transform.position.z);
     }
 }
