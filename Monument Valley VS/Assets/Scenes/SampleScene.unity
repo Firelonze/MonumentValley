@@ -212,30 +212,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &429121752 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2081572902145635178, guid: 2e60c6de42011724d986f89ff0d5514a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7866879947682962}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &429121753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 429121752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644b4d86f844ea546beeae04af9375a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poles:
-  - {fileID: 1492845517}
-  - {fileID: 53820764}
-  - {fileID: 486570084}
-  - {fileID: 653245437}
-  canSnap: 0
 --- !u!1 &486570080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,32 +1157,25 @@ PrefabInstance:
       propertyPath: poles.Array.data[3]
       value: 
       objectReference: {fileID: 653245437}
-    - target: {fileID: 3229945536580127291, guid: 2e60c6de42011724d986f89ff0d5514a,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: poles.Array.size
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 3229945536580127291, guid: 2e60c6de42011724d986f89ff0d5514a,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: poles.Array.data[0]
       value: 
       objectReference: {fileID: 1492845517}
-    - target: {fileID: 3229945536580127291, guid: 2e60c6de42011724d986f89ff0d5514a,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: poles.Array.data[1]
       value: 
       objectReference: {fileID: 53820764}
-    - target: {fileID: 3229945536580127291, guid: 2e60c6de42011724d986f89ff0d5514a,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: poles.Array.data[2]
       value: 
       objectReference: {fileID: 486570084}
-    - target: {fileID: 3229945536580127291, guid: 2e60c6de42011724d986f89ff0d5514a,
-        type: 3}
+    - target: {fileID: 0}
       propertyPath: poles.Array.data[3]
       value: 
       objectReference: {fileID: 653245437}
-    m_RemovedComponents:
-    - {fileID: 6350113074735193722, guid: 2e60c6de42011724d986f89ff0d5514a, type: 3}
-    - {fileID: 3229945536580127291, guid: 2e60c6de42011724d986f89ff0d5514a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e60c6de42011724d986f89ff0d5514a, type: 3}
