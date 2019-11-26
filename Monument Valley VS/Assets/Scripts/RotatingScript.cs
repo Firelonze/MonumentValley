@@ -24,7 +24,7 @@ public class RotatingScript : MonoBehaviour
 		float dist = 0;
 		while (dist < 1)
 		{
-			dist += Time.deltaTime;
+			dist += Time.deltaTime * 2;
 			float currentRot = Mathf.Lerp(transform.rotation.eulerAngles.y, snapRotation, dist);
 			transform.rotation = Quaternion.Euler(0, currentRot, 0);
 			yield return null;
