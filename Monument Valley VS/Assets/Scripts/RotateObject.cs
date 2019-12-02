@@ -1,14 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class RotatingScript : MonoBehaviour 
+public class RotateObject : MonoBehaviour 
 {
 	private Vector3 myVector = new Vector3(0.0f, 1.0f, 0.0f);
-	private float angle = 3.2f;
-
+	private float angle = Constants.tags.angleTag;
 	private void OnMouseDrag()
 	{
-		float x = Input.GetAxis("Mouse X");
+		float x = Input.GetAxis(Constants.inputs.mouseTag);
 		transform.RotateAround(transform.position, myVector * Time.deltaTime * -x, angle);
 	}
 
@@ -22,14 +21,17 @@ public class RotatingScript : MonoBehaviour
 	private IEnumerator RotateToSnapPoint(float snapRotation)
 	{
 		float dist = 0;
-		while (dist < 1)
+		while (dist < Constants.tags.timeTag)
 		{
-			dist += Time.deltaTime * 2;
-			float currentRot = Mathf.Lerp(transform.rotation.eulerAngles.y, snapRotation, dist);
+			dist += Time.deltaTime;
+			float currentRot = Mathf.Lerp(transform.rotation.eulerAngles.y,snapRotation, dist);
+			Debug.Log(transform.rotation.eulerAngles + "Euler b4");
 			transform.rotation = Quaternion.Euler(0, currentRot, 0);
+			Debug.Log(transform.rotation.eulerAngles + "Euler after");
 			yield return null;
 			
 		}
+	
 		Debug.Log("Coroutine ended");
 	}
 
