@@ -5,18 +5,25 @@ public class RotatingScript : MonoBehaviour
 {
 	private Vector3 myVector = new Vector3(0.0f, 1.0f, 0.0f);
 	private float angle = 3.2f;
+    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject playerOnObject;
 
 	private void OnMouseDrag()
 	{
-		float x = Input.GetAxis("Mouse X");
-		transform.RotateAround(transform.position, myVector * Time.deltaTime * -x, angle);
-	}
+        if (player.GetComponent<Player>().moving == false && playerOnObject.GetComponent<trigger>().triggers == false)
+        {
+            float x = Input.GetAxis("Mouse X");
+            transform.RotateAround(transform.position, myVector * Time.deltaTime * -x, angle);
+        }
+    }
 
 	private void OnMouseUp()
 	{
-		float snapRotationAngle = (Mathf.RoundToInt(transform.rotation.eulerAngles.y / 90)) * 90;
-		StartCoroutine(RotateToSnapPoint(snapRotationAngle));
-
+        if (player.GetComponent<Player>().moving == false && playerOnObject.GetComponent<trigger>().triggers == false)
+        {
+            float snapRotationAngle = (Mathf.RoundToInt(transform.rotation.eulerAngles.y / 90)) * 90;
+            StartCoroutine(RotateToSnapPoint(snapRotationAngle));
+        }
 	}
 
 	private IEnumerator RotateToSnapPoint(float snapRotation)
